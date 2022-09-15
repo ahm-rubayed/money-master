@@ -68,7 +68,6 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
-  console.log(startTime)
 
   // show result modal
   resultModal.innerHTML = "";
@@ -102,9 +101,10 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  startTime = 0;
-  if (startTime) return;
-  console.log(startTime)
+  // startTime =   ;
+  if (startTime){
+    return
+  }
 
   let count = 3;
   countdownOverlay.style.display = "flex";
@@ -130,8 +130,7 @@ const start = () => {
 startBtn.addEventListener("click", start);
 
 // If history exists, show it
-// displayHistory()
-addHistory();
+displayHistory()
 
 // Show typing time spent
 setInterval(() => {
