@@ -89,7 +89,7 @@ const gameOver = () => {
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
-  startTime = 1;
+  startTime = null;
   errorCount = 0;
   userText = "";
   display.classList.add("inactive");
@@ -116,7 +116,7 @@ const start = () => {
     if (count == 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
+      countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
@@ -130,7 +130,8 @@ const start = () => {
 startBtn.addEventListener("click", start);
 
 // If history exists, show it
-displayHistory();
+// displayHistory()
+addHistory();
 
 // Show typing time spent
 setInterval(() => {
