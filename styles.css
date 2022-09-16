@@ -142,8 +142,10 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  /* flex-wrap: wrap; */
   justify-content: space-around;
 }
 
@@ -186,7 +188,8 @@ button {
     padding: 0 20px;
     width: 100%;
   }
-  .card {
-    flex-direction: column;
+  #histories {
+    /* flex-direction: column; */
+    grid-template-columns: repeat(1, 1fr);
   }
 }
