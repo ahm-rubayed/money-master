@@ -81,7 +81,7 @@ const gameOver = () => {
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
-    <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+    <p>You made <span class="bold red">${errorCount}</span> mistake</p>
     <button onclick="closeModal()">Close</button>
   `;
 
@@ -101,10 +101,10 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  // startTime =   ;
-  if (startTime){
-    return
-  }
+  // startTime = 0;
+  if (startTime) {
+    return;
+  };
 
   let count = 3;
   countdownOverlay.style.display = "flex";
@@ -136,8 +136,6 @@ displayHistory()
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = parseInt((currentTime - startTime) / 1000);
-  // console.log(timeSpent)
-
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
